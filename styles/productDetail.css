@@ -79,4 +79,15 @@ body {
 .p-choose .icon-chevron-right:before {
   content: "\f054";
 }
+.p-drag {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background: url(../images/p-border.png) repeat-x 0 20px;
+}
+.p-drag .dragTxt {
+  background-color: #eaeaea;
+  padding: 0 15px;
+  color: #777777;
+}
 /*# sourceMappingURL=productDetail.css.map */
