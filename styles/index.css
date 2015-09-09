@@ -18,9 +18,50 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html {
-  width: 100%;
   height: 100%;
-  -webkit-background-size: cover;
-  background: url(../images/static-map.jpg) no-repeat center;
 }
-/*# sourceMappingURL=productDetail.css.map */
+body {
+  background: url(../images/static-map.jpg) no-repeat center;
+  background-size: cover;
+}
+.search {
+  border: 1px solid #bfbfbf;
+  background: #fff;
+  height: 50px;
+  margin: 20px 5px 0;
+  border-radius: 3px;
+}
+.location-i {
+  width: 18px;
+  height: 23px;
+  float: left;
+  margin: 12px 0 0 10px;
+  background: url(../images/home-location-i.png) no-repeat center;
+}
+.search-i {
+  width: 22px;
+  height: 22px;
+  float: left;
+  margin: 13px 0 0 10px;
+  background: url(../images/home-search-i.png) no-repeat center;
+}
+.search .txt {
+  float: left;
+  margin: 16px 0 0 10px;
+  font-size: 16px;
+}
+.search .flag {
+  height: 22px;
+  border: 1px solid #d9d9d9;
+  float: left;
+  margin: 13px 0 0 10px;
+}
+.search input {
+  border: none;
+  font-size: 16px;
+  margin: 11px 0 0 10px;
+  padding: 6px;
+  -webkit-appearance:none;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  outline：none;
+}
