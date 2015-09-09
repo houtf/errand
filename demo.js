@@ -1,1 +1,1 @@
-console.log('inline file');
+console.log('inline files');
