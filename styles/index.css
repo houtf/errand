@@ -147,6 +147,7 @@ body {
 }
 .dl .dd {
   padding: 10px;
+  display: none;
 }
 .dl .dd .tn {
   font-size: 18px;
@@ -199,6 +200,11 @@ body {
 }
 .menus li.current {
   color: #cd2211;
+}
+.self {
+  left: 46%;
+  top: 38%;
+  position: absolute;
 }
 @-webkit-keyframes pulse {
   from {
