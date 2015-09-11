@@ -1,4 +1,4 @@
-define(['zepto', 'touch', 'iscroll'], function() {
+define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
     window.$ = Zepto;
 
     var oMask = {
@@ -31,7 +31,7 @@ define(['zepto', 'touch', 'iscroll'], function() {
                 '<div class="c">'+
                     '<p>科学的电磁炮 炮姐御坂美琴 海滩边手办</p>'+
                     '<dl class="co"><dt>颜色:</dt><dd><a href="javascript:;"><img src="/images/p-size.png"/></a><a  href="javascript:;"><img src="/images/p-size.png"/></a></dd></dl>'+
-                    '<dl class="num"><dt>数量:</dt><dd id="jisuan"></dd></dl>'+
+                    '<dl class="num"><dt>数量:</dt><dd class="numdd" id="jisuan"></dd></dl>'+
                 '</div>'+
                 '<div class="d">'+
                     '<span class="d1">距离3.5KM</span>'+
@@ -44,6 +44,8 @@ define(['zepto', 'touch', 'iscroll'], function() {
             $(document.body).append(mask_tpl);
             $('.sm_mask').width($(document).width());
             $('.sm_mask').height($(document).height());
+
+            plus.init('jisuan');
         } else {
             $('.sm_wrap,.sm_mask').show();
         }
@@ -54,6 +56,8 @@ define(['zepto', 'touch', 'iscroll'], function() {
     function bindEvents() {
         var $mask = $('.sm_mask'),
             $wrap = $('.sm_wrap');
+
+        $('.co').find('a').first().addClass('cur');
 
         $mask.on('tap', function(e) {
             e.stopPropagation();

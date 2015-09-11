@@ -1,7 +1,6 @@
 requirejs.config({
     paths: {
         zepto: 'lib/zepto',
-        touch: 'lib/touch',
         iscroll: 'lib/iscroll-lite'
     }
 });

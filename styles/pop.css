@@ -74,18 +74,16 @@
   margin-left: 13px;
 }
 .sm_wrap dl dd a {
+  width: 50px;
   height: 50px;
   display: inline-block;
+  border: 1px solid #fff;
 }
 .sm_wrap dl dd a.cur {
-  box-shadow: 0 0 1px 1px #e75b4c;
+  border: 1px solid #e75b4c;
 }
 .sm_wrap dl dd a:not(:first-child) {
   margin-left: 14px;
-}
-.sm_wrap dl dd img {
-  width: 50px;
-  height: 50px;
 }
 .sm_wrap .co {
   height: 50px;
