@@ -7,7 +7,7 @@
     <meta name="format-detection" content="email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <title>跑腿</title>
+    <title>海待兔</title>
     <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/index.css">
 </head>
@@ -27,7 +27,7 @@
         <span class="home-pos-i"></span>
     </div>
     <div class="los">
-        <span class="home-location-i l1"></span>
+        <span class="home-location-i l1 pulse"></span>
         <span class="home-location-i l2"></span>
         <span class="home-location-i l3"></span>
     </div>
@@ -53,6 +53,8 @@
             <li>特产</li>
         </ul>
     </div>
+    <script src="scripts/lib/zepto.js"></script>
+    <script src="scripts/lib/touch.js"></script>
     <script src="scripts/lib/iscroll-lite.js"></script>
     <script>
         var sideScroll = new IScroll('.menus', {
@@ -60,6 +62,13 @@
             scrollY: false,
             bounceTime: 400,
             click: true
+        });
+        $('.search input').on('focusin',function(){
+            location.href = 'search.html';
+        });
+        $('.home-location-i').on('tap',function(){
+            $('.home-location-i').removeClass('pulse');
+            $(this).addClass('pulse');
         });
     </script>
 </body>

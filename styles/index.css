@@ -62,8 +62,8 @@ body {
   font-size: 16px;
   margin: 11px 0 0 10px;
   padding: 6px;
-  -webkit-appearance:none;
-  -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   outline：none;
 }
 .home-list-i {
@@ -118,13 +118,13 @@ body {
 }
 .home-location-i {
   position: absolute;
-  width: 18px;
-  height: 23px;
-  background: url(../images/home-location-i.png) no-repeat center;
+  width: 28px;
+  height: 40px;
+  background: url(../images/home-location-b-i.png) no-repeat center;
 }
 .l1 {
-  top: 169px;
-  left: 30px;
+  top: 197px;
+  left: 58px;
 }
 .l2 {
   top: 125px;
@@ -187,17 +187,41 @@ body {
   border-radius: 3px;
   overflow: hidden;
 }
-
 .menus li {
   float: left;
   margin: 0 10px;
   width: 50px;
   text-align: center;
 }
-.menus .wrap{
+.menus .wrap {
   overflow: hidden;
   width: 360px;
 }
-.menus li.current{
+.menus li.current {
   color: #cd2211;
+}
+@-webkit-keyframes pulse {
+  from {
+    -webkit-box-shadow: 0 0 0 18px rgba(255, 138, 0, 0);
+  }
+  50% {
+    -webkit-box-shadow: 0 0 0 36px rgba(255, 138, 0, .4);
+  }
+  to {
+    -webkit-box-shadow: 0 0 0 18px rgba(255, 138, 0, 0);
+  }
+}
+.pulse:before {
+  content: '';
+  display: block;
+  left: 11px;
+  width: 5px;
+  height: 5px;
+  top: 12px;
+  position: relative;
+  background-color: #e9e9e9;
+  -webkit-animation-name: pulse;
+  -webkit-animation-duration: 3s;
+  border-radius: 1px;
+  -webkit-animation-iteration-count: infinite;
 }
