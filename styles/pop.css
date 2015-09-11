@@ -89,6 +89,14 @@
   height: 50px;
   line-height: 50px;
 }
+.sm_wrap .co .listC {
+  position: relative;
+  overflow: hidden;
+  width: 83%;
+}
+.sm_wrap .co .listC .listWrap {
+  position: relative;
+}
 .sm_wrap .num {
   height: 70px;
   line-height: 70px;

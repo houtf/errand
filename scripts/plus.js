@@ -10,20 +10,22 @@ define(function() {
 
     function abindEvents(id) {
         var $input = $('#'+id).find('.mid');
-        var nums = parseInt($input.val(),10);
+        
         var yangshi = '';
         $('#'+id).on('tap','.plus',function(){
-            nums++;
-            $input.val(nums);
+            var nums1 = parseInt($input.val(),10);
+            nums1++;
+            $input.val(nums1);
             $('#'+id).find('.cut').removeClass('dis');
         });
         $('#'+id).on('tap','.cut',function(){
-            nums--;
-            if(nums <= 1){
+            var nums2 = parseInt($input.val(),10);
+            nums2--;
+            if(nums2 <= 1){
                 $(this).addClass('dis');
             }
-            nums = nums < 1 ? 1 : nums;
-            $input.val(nums);
+            nums2 = nums2 < 1 ? 1 : nums2;
+            $input.val(nums2);
             
         });
     }   
@@ -32,6 +34,9 @@ define(function() {
 
         init: function(id) {
             initialize(id);
+        },
+        reset: function(id){
+            $('#'+id).find('.mid').val('1');
         }
     }
 });

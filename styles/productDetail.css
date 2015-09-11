@@ -29,13 +29,23 @@ body {
   position: relative;
 }
 .p-head {
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  border-bottom: 1px solid #bfbfbf;
+}
+.p-head .arrow {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 2%;
+  background: url(/images/home-arrow-i.png) no-repeat center;
+  transform: rotate(180deg);
+}
+.p-head h3 {
   text-align: center;
-  height: 60px;
-  line-height: 60px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #b4b4b4;
-  font-size: 17px;
-  background-image: -webkit-linear-gradient(top, #f6f6f6, #efefef);
+  font-size: 18px;
 }
 .p-imgc {
   height: 340px;

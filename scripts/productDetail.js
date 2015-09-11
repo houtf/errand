@@ -6,7 +6,14 @@ requirejs.config({
 });
 
 requirejs(['zepto','pop'], function(undefined,pop) {
-	$('.p-choose').on('tap',function(){
+	$('.p-choose,.addToCart').on('tap',function(){
 		pop.init();
 	});
+
+
+	document.addEventListener('customEvent', function(e){
+	    var cartNum = pop.getCartNum();
+	    $('#numsOfCart').text(cartNum);
+	}, false);
+	
 });
