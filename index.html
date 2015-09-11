@@ -19,5 +19,48 @@
         <div class="search-i"></div>
         <input type="text" placeholder="搜索商圈、当地特产">
     </div>
+    <div>
+        <span class="home-list-i"></span>
+        <span class="home-hot-i"></span>
+        <span class="home-gwc-i"></span>
+        <span class="home-usr-i"></span>
+        <span class="home-pos-i"></span>
+    </div>
+    <div class="los">
+        <span class="home-location-i l1"></span>
+        <span class="home-location-i l2"></span>
+        <span class="home-location-i l3"></span>
+    </div>
+    <div class="dl">
+        <div class="dd">
+            <h3>
+                <span class="tn">秋叶原商圈</span>
+                <span class="tag">数码</span>
+                <span class="tag">动漫</span>
+                <span class="loc">距离 5.5千米</span>
+            </h3>
+            <p>在日本，衍生出在现今来说已经无可分割的名词“秋叶原系”（日本多简称为秋叶原的女仆...</p>
+        </div>
+    </div>
+    <div class="menus">
+        <ul class="wrap">
+            <li>全部</li>
+            <li class="current">动漫</li>
+            <li>数码</li>
+            <li>电器</li>
+            <li>化妆</li>
+            <li>箱包</li>
+            <li>特产</li>
+        </ul>
+    </div>
+    <script src="scripts/lib/iscroll-lite.js"></script>
+    <script>
+        var sideScroll = new IScroll('.menus', {
+            scrollX: true,
+            scrollY: false,
+            bounceTime: 400,
+            click: true
+        });
+    </script>
 </body>
 </html>
