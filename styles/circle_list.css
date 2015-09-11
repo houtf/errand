@@ -207,6 +207,9 @@ header {
 .menus li.current{
   color: #cd2211;
 }
+.wrapper {
+	display: none;
+}
 
 
 

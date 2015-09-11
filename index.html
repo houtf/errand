@@ -27,31 +27,56 @@
         <span class="home-usr-i"></span>
         <span class="home-pos-i"></span>
     </div>
+    <div class="location-i self"></div>
     <div class="los">
-        <span class="home-location-i l1 pulse"></span>
-        <span class="home-location-i l2"></span>
-        <span class="home-location-i l3"></span>
+        <span class="home-location-i l1" data-i="1"></span>
+        <span class="home-location-i l2 pulse" data-i="2"></span>
+        <span class="home-location-i l3" data-i="3"></span>
     </div>
     <div class="dl">
-        <div class="dd">
+        <div class="dd d0" data-i="0">
+            <h3>
+                <span class="tn">日本东京</span>
+                <span class="tag">动漫</span>
+            </h3>
+            <p>东京充满了活力与时代感，这里有最前沿的建筑设计和当下最流行的时尚风格，有白天人流如织...</p>
+        </div>
+        <div class="dd d1" data-i="1">
             <h3>
                 <span class="tn">秋叶原商圈</span>
-                <span class="tag">数码</span>
                 <span class="tag">动漫</span>
-                <span class="loc">距离 5.5千米</span>
+                <span class="loc">距离 5.2 KM</span>
             </h3>
-            <p>在日本，衍生出在现今来说已经无可分割的名词“秋叶原系”（日本多简称为秋叶原的女仆...</p>
+            <p>秋叶原位于东京市区东北部千代田地区，，处于环绕东京市中心的高速电车山手线上，山手线是...</p>
+        </div>
+        <div class="dd d2" data-i="2" style="display:block;">
+            <h3>
+                <span class="tn">银座商圈</span>
+                <span class="tag">美妆</span>
+                <span class="tag">数码</span>
+                <span class="tag">电器</span>
+                <span class="loc">距离 5.5 KM</span>
+            </h3>
+            <p>银座（Ginza），是日本东京中央区的一个主要商业区，以高级购物商店闻名。其是东京的一个...</p>
+        </div>
+        <div class="dd d3" data-i="3">
+            <h3>
+                <span class="tn">浅草寺商业街</span>
+                <span class="tag">特产</span>
+                <span class="loc">距离 3.8 KM</span>
+            </h3>
+            <p>浅草寺雷门和神殿之间是一条一百多米的小街，两侧卖各种旅游商品，有东京名点雷米花糖、人...</p>
         </div>
     </div>
     <div class="menus">
         <ul class="wrap">
-            <li class="current">全部</li>
-            <li>美妆</li>
-            <li>动漫</li>
-            <li>电器</li>
-            <li>特产</li>
-            <li>箱包</li>
-            <li>数码</li>
+            <li data-i="0">全部</li>
+            <li data-i="2" class="current">美妆</li>
+            <li data-i="1">动漫</li>
+            <li data-i="2">电器</li>
+            <li data-i="3">特产</li>
+            <li data-i="2">数码</li>
+            <li data-i="-1">箱包</li>
         </ul>
     </div>
     <script src="scripts/lib/zepto.js"></script>
@@ -79,6 +104,8 @@
         $('.home-location-i').on('tap',function(){
             $('.home-location-i').removeClass('pulse');
             $(this).addClass('pulse');
+            $('.dd').hide();
+            $('.d'+$(this).data('i')).show();
         });
         $('.home-list-i').on('tap',function(){
             showTip('暂未开放视图切换功能');
@@ -90,6 +117,31 @@
             $('.home-location-i').removeClass('pulse');
             $('.l1').addClass('pulse');
         });
+        $('.menus li').on('tap',function(){
+            if($(this).data('i') != '-1'){
+                $('.menus li').removeClass('current');
+                $(this).addClass('current')
+                if($(this).data('i') == 0){
+                    $('.home-location-i').addClass('pulse');
+                    $('.d0').show();
+                }else {
+                    $('.home-location-i').removeClass('pulse');
+                    $('.l'+$(this).data('i')).addClass('pulse');
+                    $('.dd').hide();
+                    $('.d'+$(this).data('i')).show();
+                }
+            }else{
+                showTip('暂无该品类数据');
+            }
+        });
+        //跳转到商圈详情页
+        $('.dd').on('tap',function(){
+            if( $(this).data('i') != 0 ){
+                location.href = 'circle_list.html';
+                localStorage.ptype = $(this).data('i');
+            }
+        });
+
     </script>
 </body>
 </html>
