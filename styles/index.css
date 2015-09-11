@@ -62,6 +62,7 @@ body {
   font-size: 16px;
   margin: 11px 0 0 10px;
   padding: 6px;
+  width: 126px;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   outline：none;
