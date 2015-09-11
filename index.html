@@ -7,8 +7,9 @@
     <meta name="format-detection" content="email=no" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <title>跑腿</title>
+    <title>海待兔</title>
     <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/tip.css">
     <link rel="stylesheet" type="text/css" href="styles/index.css">
 </head>
 <body>
@@ -19,5 +20,76 @@
         <div class="search-i"></div>
         <input type="text" placeholder="搜索商圈、当地特产">
     </div>
+    <div>
+        <span class="home-list-i"></span>
+        <span class="home-hot-i"></span>
+        <span class="home-gwc-i"></span>
+        <span class="home-usr-i"></span>
+        <span class="home-pos-i"></span>
+    </div>
+    <div class="los">
+        <span class="home-location-i l1 pulse"></span>
+        <span class="home-location-i l2"></span>
+        <span class="home-location-i l3"></span>
+    </div>
+    <div class="dl">
+        <div class="dd">
+            <h3>
+                <span class="tn">秋叶原商圈</span>
+                <span class="tag">数码</span>
+                <span class="tag">动漫</span>
+                <span class="loc">距离 5.5千米</span>
+            </h3>
+            <p>在日本，衍生出在现今来说已经无可分割的名词“秋叶原系”（日本多简称为秋叶原的女仆...</p>
+        </div>
+    </div>
+    <div class="menus">
+        <ul class="wrap">
+            <li class="current">全部</li>
+            <li>美妆</li>
+            <li>动漫</li>
+            <li>电器</li>
+            <li>特产</li>
+            <li>箱包</li>
+            <li>数码</li>
+        </ul>
+    </div>
+    <script src="scripts/lib/zepto.js"></script>
+    <script src="scripts/lib/touch.js"></script>
+    <script src="scripts/lib/iscroll-lite.js"></script>
+    <script>
+        function showTip(msg) {
+            if ($('.tip-msg').length === 0) {
+                $('body').append('<div class="tip-msg"><span></span></div>');
+            }
+            $('.tip-msg').addClass('fade').find('span').text(msg);
+            setTimeout(function(){
+                $('.tip-msg').remove();
+            }, 5000);
+        }
+        var sideScroll = new IScroll('.menus', {
+            scrollX: true,
+            scrollY: false,
+            bounceTime: 400,
+            click: true
+        });
+        $('.search input').on('focusin',function(){
+            location.href = 'search.html';
+        });
+        $('.home-location-i').on('tap',function(){
+            $('.home-location-i').removeClass('pulse');
+            $(this).addClass('pulse');
+        });
+        $('.home-list-i').on('tap',function(){
+            showTip('暂未开放视图切换功能');
+        });
+        $('.home-hot-i').on('tap',function(){
+            showTip('点击“热卖”：导购功能敬请期待哦~');
+        });
+        $('.home-pos-i').on('tap',function(){
+            $('.home-location-i').removeClass('pulse');
+            $('.l1').addClass('pulse');
+        });
+    </script>
 </body>
 </html>

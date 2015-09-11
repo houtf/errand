@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>商圈商品列表</title>
+	<link href="styles/base.css" rel="stylesheet" type="text/css">
+	<link href="styles/circle_list.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header class="clearfix"> 
+		<div class="header-back fleft"></div>
+		<div class="header-search fright"></div>
+		<div class="header-title">秋叶原商圈</div>
+	</header>
+
+	<section class="circle-info">
+		<div class="img" style="background-image:url(./images/circle_bg.jpg)"></div>
+		<div class="distance">
+			<i class="dist-marker"></i><span>距离</span><b>5.5</b> <span>KM</span>
+		</div>
+		<p class="desc">在这里除了有各个制造厂商的服务机构和商品展示厅之外，免税店和各种促销活动也很充实，走走看看也非常有趣。每年夏天和冬天举办的两次电器节是这里最大的节日，不要错过了购物的绝好机会。在这里除了有各个制造厂商的服务机构和商品展示厅之外，免税店和各种促销活动也很充实，走走看看也非常有趣。每年夏天和冬天举办的两次电器节是这里最大的节日，不要错过了购物的绝好机会。</p>
+		<p class="arrow" id="show-more">
+			<span>more</span> <b></b>
+		</p>
+	</section>
+
+	<section class="prom-list">
+		<div class="type">
+			<a href="#">数码</a>
+			<b></b>
+		</div>
+		<ul class="items clearfix">
+			<li>
+				<figure style="background-image:url(./images/test_prod.jpg)">
+					<a href="#"></a>
+				</figure>
+				<p>佳能单反照相机<br>¥ 844</p>
+				<b>NEW</b>
+			</li>
+			<li>
+				<figure style="background-image:url(./images/test_prod.jpg)">
+					<a href="#"></a>
+				</figure>
+				<p>佳能单反照相机<br>¥ 844</p>
+				<b>NEW</b>
+			</li>
+			<li>
+				<figure style="background-image:url(./images/test_prod.jpg)">
+					<a href="#"></a>
+				</figure>
+				<p>佳能单反照相机<br>¥ 844</p>
+			</li>
+			<li>
+				<figure style="background-image:url(./images/test_prod.jpg)">
+					<a href="#"></a>
+				</figure>
+				<p>佳能单反照相机<br>¥ 844</p>
+			</li>
+		</ul>
+	</section>
+
+	<p class="drop_down">向下拉取获得更多&Darr;</p>
+
+	<div class="menus">
+        <ul class="wrap">
+            <li>全部</li>
+            <li class="current">动漫</li>
+            <li>数码</li>
+            <li>电器</li>
+            <li>化妆</li>
+            <li>箱包</li>
+            <li>特产</li>
+        </ul>
+    </div>
+
+	<script src="scripts/lib/zepto.js"></script>
+    <script src="scripts/lib/iscroll-lite.js"></script>
+    <script>
+        var sideScroll = new IScroll('.menus', {
+            scrollX: true,
+            scrollY: false,
+            bounceTime: 400,
+            click: true
+        });
+
+        $('#show-more').click(function(){
+        	$('.circle-info .desc').toggleClass('show-all');
+        	$('.circle-info .arrow b').toggleClass('up')
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

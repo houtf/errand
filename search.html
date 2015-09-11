@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>海待兔－搜索</title>
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/search.css">
+</head>
+<body>
+    <div class="s-wrap">
+        <div class="arrow"></div>
+        <div class="search">
+            <div class="search-i"></div>
+            <input type="text" placeholder="搜索商圈、当地特产">
+        </div>
+    </div>
+    <div class="hot">
+        <label>热搜:</label>
+        <span>手办</span>
+        <span>秋叶原</span>
+    </div>
+    <ul class="history">
+        <li>索尼店</li>
+        <li>手办</li>
+        <li>秋叶原</li>
+    </ul>
+    <div class="clear">清空搜索历史</div>
+    <script src="scripts/lib/zepto.js"></script>
+    <script src="scripts/lib/touch.js"></script>
+    <script type="text/javascript">
+        $('.arrow').on('tap',function(){
+            location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
