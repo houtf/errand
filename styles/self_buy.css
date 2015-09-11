@@ -220,6 +220,25 @@ body {
     -webkit-box-shadow: 0 0 0 18px rgba(255, 138, 0, 0);
   }
 }
+.arrow {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 2%;
+  background: url(../images/home-arrow-i.png) no-repeat center;
+  transform: rotate(180deg);
+}
+.head {
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  border-bottom: 1px solid #bfbfbf;
+}
+.head h3 {
+  text-align: center;
+  font-size: 18px;
+}
 .pulse:before {
   content: '';
   display: block;

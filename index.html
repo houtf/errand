@@ -27,7 +27,7 @@
         <span class="home-usr-i"></span>
         <span class="home-pos-i"></span>
     </div>
-    <div class="location-i self"></div>
+    <div class="map-loc self"></div>
     <div class="los">
         <span class="home-location-i l1" data-i="1"></span>
         <span class="home-location-i l2 pulse" data-i="2"></span>
@@ -80,7 +80,6 @@
         </ul>
     </div>
     <script src="scripts/lib/zepto.js"></script>
-    <script src="scripts/lib/touch.js"></script>
     <script src="scripts/lib/iscroll-lite.js"></script>
     <script>
         function showTip(msg) {
@@ -111,7 +110,7 @@
             showTip('暂未开放视图切换功能');
         });
         $('.home-hot-i').on('tap',function(){
-            showTip('点击“热卖”：导购功能敬请期待哦~');
+            showTip('导购功能敬请期待哦~');
         });
         $('.home-pos-i').on('tap',function(){
             $('.home-location-i').removeClass('pulse');

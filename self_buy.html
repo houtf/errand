@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>海待兔</title>
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/tip.css">
+    <link rel="stylesheet" type="text/css" href="styles/self_buy.css">
+</head>
+<body>
+    <div class="head">
+        <div class="arrow"></div>
+        <h3>购物清单</h3>
+    </div>
+    <div>
+        <span class="home-list-i"></span>
+        <span class="home-hot-i"></span>
+        <span class="home-gwc-i"></span>
+        <span class="home-usr-i"></span>
+        <span class="home-pos-i"></span>
+    </div>
+    <div class="map-loc self"></div>
+    <div class="los">
+        <span class="home-location-i l1" data-i="1"></span>
+        <span class="home-location-i l2 pulse" data-i="2"></span>
+        <span class="home-location-i l3" data-i="3"></span>
+    </div>
+    <div class="dl">
+        <div class="dd">
+            <h3>
+                <span class="tn">秋叶原商圈</span>
+                <span class="tag">动漫</span>
+                <span class="loc">距离 5.2 KM</span>
+            </h3>
+            <p>秋叶原位于东京市区东北部千代田地区，，处于环绕东京市中心的高速电车山手线上，山手线是...</p>
+        </div>
+    </div>
+    <script src="scripts/lib/zepto.js"></script>
+    <script src="scripts/lib/iscroll-lite.js"></script>
+    <script>
+        function showTip(msg) {
+            if ($('.tip-msg').length === 0) {
+                $('body').append('<div class="tip-msg"><span></span></div>');
+            }
+            $('.tip-msg').addClass('fade').find('span').text(msg);
+            setTimeout(function(){
+                $('.tip-msg').remove();
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
