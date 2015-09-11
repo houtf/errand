@@ -25,74 +25,54 @@ header {
 	line-height: 60px;
 }
 
-.circle-info {
-	background-color: #fff;
-	padding-bottom: 6px;
-	margin-bottom: 10px;
-}
-
-.circle-info .img {
-	width: 100%;
-	height: 108px;
-	background-repeat: no-repeat;
-	background-position: left center;
-	-webkit-background-size: cover;
-	background-size: cover;
-}
-
-.circle-info .distance {
-	height: 20px;
-	line-height: 20px;
-	padding-right: 12px;
-	text-align: right;
-	font-size: 12px;
-}
-
-.dist-marker {
-	display: inline-block;
-	width: 12px;
-	height: 20px;
-	background: url(../images/marker.png) no-repeat bottom center;
-	-webkit-background-size: 90%;
-	background-size: 90%;
-	margin-right: 6px;
-	margin-bottom: -2px;
-}
-
-.circle-info .desc {
-	margin: 12px;
-	height: 50px;
-	overflow: hidden;
-}
-
-.circle-info .desc.show-all {
-	height: auto;
-}
-
-.circle-info .arrow {
-	height: 20px;
-	line-height: 20px;
-	text-align: right;
-	margin: 0 12px;
-	color: #121212;
-}
-
-.circle-info .arrow b {
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	background: url(../images/arr_down.png) no-repeat center;
-	-webkit-background-size: 64%;
-	background-size: 64%;
-	transform: translateY(4px);
-}
-
-.circle-info .arrow b.up {
-	transform: translateY(4px) rotate(180deg);
-}
-
 .prom-list {
 	background-color: #fff;
+	margin-top: 5px;
+}
+
+.prom-list .filter {
+	height: 36px;
+}
+
+.prom-list .filter p {
+	width: 50%;
+	border-bottom: 4px solid #eaeaea;
+	float: left;
+	text-align: center;
+	font-size: 14px;
+	line-height: 36px;
+}
+
+.prom-list .filter p b {
+	position: relative;
+	display: inline-block;
+	width: 15px;
+	height: 20px;
+}
+
+.prom-list .filter p b:before,
+.prom-list .filter p b:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	width: 15px;
+	height: 9px;
+	background: url(../images/arr_down.png) no-repeat bottom center;
+	-webkit-background-size: 50%;
+	background-size: 50%;
+}
+
+.prom-list .filter p b:before {
+	top: 45%;
+	transform: rotate(180deg);
+}
+
+.prom-list .filter p b:after {
+	bottom: 0;
+}
+
+.prom-list .filter p.curr {
+	border-bottom: 4px solid #808080;
 }
 
 .prom-list .type {
@@ -177,36 +157,6 @@ header {
 	font-size: 14px;
 	color: #2a2a2a;
 	line-height: 48px;
-	margin-bottom: 50px;
 }
-
-.menus {
-  font-size: 16px;
-  line-height: 40px;
-  bottom: 10px;
-  position: fixed;
-  border: 1px solid #bfbfbf;
-  background: #fff;
-  height: 40px;
-  margin: 0 2%;
-  width: 96%;
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.menus li {
-  float: left;
-  margin: 0 10px;
-  width: 50px;
-  text-align: center;
-}
-.menus .wrap{
-  overflow: hidden;
-  width: 360px;
-}
-.menus li.current{
-  color: #cd2211;
-}
-
 
 
