@@ -7,37 +7,59 @@
     <title>商品详情页</title>
     <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/productDetail.css">
+    <link rel="stylesheet" type="text/css" href="styles/pop.css">
 </head>
 <body>
-    <section class="p-imgc">
-        <img src="images/product.png" alt="商品图片" />
-        <div class="info">某科学的电磁炮 炮姐御坂美琴 海滩边手办</div>
+  <section class="page1">
+    <section class="pageInner">
+      <section class="p-head">商品详情</section>
+      <section class="p-imgc">
+          <img src="images/product.png" alt="商品图片" />
+          <div class="info">某科学的电磁炮 炮姐御坂美琴 海滩边手办</div>
+      </section>
+      <section class="p-price">
+        <span class="price">￥<em>888.00</em></span>
+        <span class="addr"><i class="icon-location icon"></i>秋叶原本店A-910</span>
+      </section>
+      <section class="p-choose">
+        <span>选择商品规格</span>
+        <i class="icon-chevron-right icon"></i>
+      </section>
+      <section class="p-drag"><span class="dragTxt">继续拖动，查看商品详情</span></section>
     </section>
-    <section class="p-price">
-    	<span class="price">￥<em>888.00</em></span>
-    	<span class="addr"><i class="icon-location icon"></i>秋叶原本店A-910</span>
-    </section>
-    <section class="p-choose">
-    	<span>选择商品规格</span>
-    	<i class="icon-chevron-right icon"></i>
-    </section>
-    <section class="p-drag"><span class="dragTxt">继续拖动，查看商品详情</span></section>
+  </section>
+  <section class="page2">
     <section class="p-detail">
         <p>「とある科学の超電磁砲」より、学園都市第3位の超能力者（レベル5）である主人公「御坂美琴」がビーチサイドver.となって登場！！</p>
         <p>某科学的超电磁炮 御坂美琴手办 DX 水着优质版</p>
         <p><img src="images/p-detail.png"></p>
+        <p>「とある科学の超電磁砲」より、学園都市第3位の超能力者（レベル5）である主人公「御坂美琴」がビーチサイドver.となって登場！！</p>
+        <p>某科学的超电磁炮 御坂美琴手办 DX 水着优质版</p>
     </section>
-    <section class="p-bottom">
-        <a href="javascript:;">
-            <p class="icon-child icon"></p>
-            <p>自己去</p>
-        </a>
-        <a href="javascript:;">
-            <p class="icon-cart-plus icon"></p>
-            <p>购物车</p>
-        </a>
-        <a href="javascript:;" class="addToCart">加入购物车</a>
-    </section>
+  </section>
+  <section class="p-bottom">
+      <a href="javascript:;">
+          <p class="icon-child icon"></p>
+          <p>自己去</p>
+      </a>
+      <a href="javascript:;">
+          <p class="icon-cart-plus icon"><i>1</i></p>
+          <p>购物车</p>
+      </a>
+      <a href="javascript:;" class="addToCart">加入购物车</a>
+  </section>
+    <!-- <div class="hehe">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div> -->
+  <!-- <script src="scripts/lib/iscroll-lite.js"></script> -->
+  <script src="scripts/lib/require.js" data-main="scripts/productDetail"></script>
 
 </body>
 </html>
