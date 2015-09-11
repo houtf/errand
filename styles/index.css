@@ -74,7 +74,7 @@ body {
   right: 2%;
   border-radius: 3px;
   box-shadow: 1px 1px 5px #bfbfbf;
-  background: url(../images/home-search-i.png) no-repeat center #fff;
+  background: url(../images/home-list-i.png) no-repeat center #fff;
 }
 .home-hot-i {
   position: absolute;
@@ -195,7 +195,7 @@ body {
 }
 .menus .wrap {
   overflow: hidden;
-  width: 360px;
+  width: 490px;
 }
 .menus li.current {
   color: #cd2211;

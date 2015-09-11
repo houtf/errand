@@ -9,6 +9,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>海待兔</title>
     <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/tip.css">
     <link rel="stylesheet" type="text/css" href="styles/index.css">
 </head>
 <body>
@@ -44,19 +45,28 @@
     </div>
     <div class="menus">
         <ul class="wrap">
-            <li>全部</li>
-            <li class="current">动漫</li>
-            <li>数码</li>
+            <li class="current">全部</li>
+            <li>美妆</li>
+            <li>动漫</li>
             <li>电器</li>
-            <li>化妆</li>
-            <li>箱包</li>
             <li>特产</li>
+            <li>箱包</li>
+            <li>数码</li>
         </ul>
     </div>
     <script src="scripts/lib/zepto.js"></script>
     <script src="scripts/lib/touch.js"></script>
     <script src="scripts/lib/iscroll-lite.js"></script>
     <script>
+        function showTip(msg) {
+            if ($('.tip-msg').length === 0) {
+                $('body').append('<div class="tip-msg"><span></span></div>');
+            }
+            $('.tip-msg').addClass('fade').find('span').text(msg);
+            setTimeout(function(){
+                $('.tip-msg').remove();
+            }, 5000);
+        }
         var sideScroll = new IScroll('.menus', {
             scrollX: true,
             scrollY: false,
@@ -69,6 +79,16 @@
         $('.home-location-i').on('tap',function(){
             $('.home-location-i').removeClass('pulse');
             $(this).addClass('pulse');
+        });
+        $('.home-list-i').on('tap',function(){
+            showTip('暂未开放视图切换功能');
+        });
+        $('.home-hot-i').on('tap',function(){
+            showTip('点击“热卖”：导购功能敬请期待哦~');
+        });
+        $('.home-pos-i').on('tap',function(){
+            $('.home-location-i').removeClass('pulse');
+            $('.l1').addClass('pulse');
         });
     </script>
 </body>
