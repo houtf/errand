@@ -81,6 +81,11 @@
     	$('.header-back').on('tap',function(){
             location.href = 'circle_list.html';
         });
+
+        $('.prom-list .filter p').on('tap', function(){
+        	$('.prom-list .filter p.curr').removeClass('curr');
+        	$(this).addClass('curr');
+        });
     </script>
 </body>
 </html>
