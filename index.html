@@ -147,14 +147,14 @@
             }
         });
         //跳转到商圈详情页
-        $('.dd').on('tap',function(){
+        $('.dd').on('click',function(){
             if( $(this).data('i') != 0 ){
                 location.href = 'circle_list.html';
                 localStorage.ptype = $(this).data('i');
             }
         });
 
-        $('.home-gwc-i').on('tap', function(){
+        $('.home-gwc-i').on('click', function(){
             location.href = 'cart.html';
         });
 
