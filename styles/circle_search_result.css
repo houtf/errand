@@ -64,6 +64,7 @@ header {
 
 .prom-list .filter p b:before {
 	top: 45%;
+	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
