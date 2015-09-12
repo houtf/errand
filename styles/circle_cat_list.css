@@ -64,6 +64,7 @@ header {
 
 .prom-list .filter p b:before {
 	top: 45%;
+	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 }
 
@@ -150,6 +151,9 @@ header {
 
 .prom-list .items p {
 	line-height: 20px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
 
 .drop_down {

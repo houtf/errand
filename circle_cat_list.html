@@ -28,11 +28,17 @@
 
 		<ul class="items clearfix">
 				<li>
+					<figure style="background-image:url(./images/makeup4.png)">
+						<a href="productDetail.html"></a>
+					</figure>
+					<p>SK-II 神仙水<br>¥ 38</p>
+					<b>NEW</b>
+				</li>
+				<li>
 					<figure style="background-image:url(./images/makeup1.png)">
 						<a href="productDetail.html"></a>
 					</figure>
 					<p>植村秀红萃光采嫩肤水(滋润型)<br>¥ 89</p>
-					<b>NEW</b>
 				</li>
 				<li>
 					<figure style="background-image:url(./images/makeup2.png)">
@@ -46,12 +52,7 @@
 					</figure>
 					<p>DHC 蝶翠诗睫毛修护液<br>¥ 80</p>
 				</li>
-				<li>
-					<figure style="background-image:url(./images/makeup4.png)">
-						<a href="productDetail.html"></a>
-					</figure>
-					<p>SK-II 神仙水<br>¥ 38</p>
-				</li>
+				
 				<li>
 					<figure style="background-image:url(./images/makeup5.png)">
 						<a href="productDetail.html"></a>
@@ -86,6 +87,10 @@
         	$('.prom-list .filter p.curr').removeClass('curr');
         	$(this).addClass('curr');
         });
+
+        $('.header-search').on('tap',function(){
+			location.href = 'search.html';
+		});
     </script>
 </body>
 </html>

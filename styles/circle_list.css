@@ -84,10 +84,12 @@ header {
 	background: url(../images/arr_down.png) no-repeat center;
 	-webkit-background-size: 64%;
 	background-size: 64%;
+	-webkit-transform: translateY(4px);
 	transform: translateY(4px);
 }
 
 .circle-info .arrow b.up {
+	-webkit-transform: translateY(4px) rotate(180deg);
 	transform: translateY(4px) rotate(180deg);
 }
 
