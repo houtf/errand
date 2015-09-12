@@ -33,6 +33,7 @@
         <span class="home-location-i l1" data-i="1"></span>
         <span class="home-location-i l2 pulse" data-i="2"></span>
         <span class="home-location-i l3" data-i="3"></span>
+        <span class="home-location-i l4" data-i="4"></span>
     </div>
     <div class="dl">
         <div class="dd d0" data-i="0">
@@ -140,6 +141,10 @@
                 location.href = 'circle_list.html';
                 localStorage.ptype = $(this).data('i');
             }
+        });
+
+        $('.home-gwc-i').on('tap', function(){
+            location.href = 'cart.html';
         });
 
     var webSocket;

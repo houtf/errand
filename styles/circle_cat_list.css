@@ -151,6 +151,9 @@ header {
 
 .prom-list .items p {
 	line-height: 20px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
 }
 
 .drop_down {
