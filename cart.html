@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <title>海待兔－购物车</title>
-    <link rel="stylesheet" type="text/css" href="styles/tip.css">
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
     <link rel="stylesheet" type="text/css" href="styles/cart.css">
 </head>
 <body>
@@ -17,10 +17,62 @@
         <h3>购物清单</h3>
     </div>
  
-    <dl class="circle_list">
-      <dt></dt>
-      <dd></dd>
+    <dl class="item_list">
+      <dt class="clearfix"><b></b><span>银座商圈</span></dt>
+      <dd class="clearfix">
+        <b></b>
+        <p class="img"><img src="./images/makeup4.png" alt=""></p>
+        <div class="info">
+          <p class="name">SK-II 神仙水</p>
+          <p class="price">¥ 45</p>
+          <p class="pluscontainer">
+            <span class="cut op dis">-</span><input class="op mid"  value="1" /><span class="plus op">+</span></div>
+          </p>
+        </div>
+      </dd>
+
+      <dd class="clearfix">
+        <b></b>
+        <p class="img"><img src="./images/makeup3.png" alt=""></p>
+        <div class="info">
+          <p class="name">DHC 蝶翠诗睫毛修护液</p>
+          <p class="price">¥ 80</p>
+          <p class="pluscontainer">
+            <span class="cut op dis">-</span><input class="op mid"  value="1" /><span class="plus op">+</span></div>
+          </p>
+        </div>
+      </dd>
     </dl>
+
+
+    <dl class="item_list">
+      <dt class="clearfix"><b></b><span>浅草寺商业街</span></dt>
+      <dd class="clearfix">
+        <b></b>
+        <p class="img"><img src="./images/travel1.jpg" alt=""></p>
+        <div class="info">
+          <p class="name">樱花铃铛钥匙链</p>
+          <p class="price">¥ 45</p>
+          <p class="pluscontainer">
+            <span class="cut op dis">-</span><input class="op mid"  value="1" /><span class="plus op">+</span></div>
+          </p>
+        </div>
+      </dd>
+
+      <dd class="clearfix">
+        <b></b>
+        <p class="img"><img src="./images/travel2.png" alt=""></p>
+        <div class="info">
+          <p class="name">日本护身符必胜御守</p>
+          <p class="price">¥ 67</p>
+          <p class="pluscontainer">
+            <span class="cut op dis">-</span><input class="op mid" value="1" /><span class="plus op">+</span></div>
+          </p>
+        </div>
+      </dd>
+    </dl>
+
+    <div style="height:100px"></div>
 
     <div class="pay-bar">
         <div class="total">合计：<span>100</span>元</div>
@@ -32,6 +84,52 @@
         $('.arrow').on('tap',function(){
             window.history.go(-1);
         });
+
+        $('.btn').on('tap', function(){
+            location.href = 'orderSure.html';
+        });
+
+        $('.dis').on('tap', function(){
+          var mid = $(this).next(),
+              val = mid.val();
+          if( val > 1 ){
+            mid.val( +val - 1 );
+          }
+        });
+
+        $('.plus').on('tap', function(){
+          var mid = $(this).prev(),
+              val = mid.val();
+            mid.val( +val + 1 );
+        });
+
+        $('.item_list dt').on('tap', function(){
+          var p = $(this).parent(),
+              b = $(this).find('b'),
+              dd = p.find('dd b');
+          b.toggleClass('checked');
+          if( b.hasClass('checked') ){
+              dd.addClass('checked');
+          } else {
+              dd.removeClass('checked');
+          }
+        });
+
+        $('.item_list dd b').on('tap', function(){
+          var p = $(this).parents('dl'),
+              b = p.find('dt b');
+          $(this).toggleClass('checked');
+          if( !$(this).hasClass('checked') ){
+            b.removeClass('checked');
+          }
+        });
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
