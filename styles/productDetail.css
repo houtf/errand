@@ -35,12 +35,17 @@ body {
   border-bottom: 1px solid #bfbfbf;
 }
 .p-head .arrow {
+  display: inline-block;
   width: 30px;
   height: 40px;
   position: absolute;
   top: 5px;
   left: 2%;
   background: url(/images/home-arrow-i.png) no-repeat center;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .p-head h3 {

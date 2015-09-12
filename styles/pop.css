@@ -7,7 +7,7 @@
 }
 .sm_wrap {
   z-index: 101;
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: -220px;
   width: 100%;
@@ -54,6 +54,9 @@
   left: -5px;
 }
 .sm_wrap .d .d2 {
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
   color: white;
   width: 30%;
   background-color: #249cca;

@@ -40,7 +40,7 @@ define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
                 '</div>'+
                 '<div class="d">'+
                     '<span class="d1">距离5.2KM</span>'+
-                    '<span class="d2">自己去</span>'+
+                    '<a class="d2" href="self_buy.html">自己去</a>'+
                     '<span class="d3">加入购物车</span>'+
                 '</div>'+
             '</section>';
@@ -64,7 +64,8 @@ define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
             $('.sm_wrap,.sm_mask').show();
         }
         oMask.openMask();
-        $('.sm_wrap').css('bottom', -document.body.scrollTop);
+        // $('.sm_wrap').css('bottom', -document.body.scrollTop);
+        $('.sm_wrap').css('bottom', 0);
     }
 
     function bindEvents() {
@@ -77,6 +78,7 @@ define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
             e.stopPropagation();
             $(this).hide();
             $wrap.css('bottom', -220).hide();
+            // $wrap.hide();
             oMask.hideMask();
             plus.reset('jisuan');
             sideScroll.scrollTo(0,0);
