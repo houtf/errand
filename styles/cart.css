@@ -39,6 +39,8 @@ body {
   position: fixed;
   bottom: 0;
   background: url(../images/cart-menu-bg.png) no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .pay-bar {
   color: #fff;
