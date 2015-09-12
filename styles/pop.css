@@ -77,7 +77,7 @@
   width: 50px;
   height: 50px;
   display: inline-block;
-  border: 1px solid #fff;
+  border: 1px solid #dadada;
 }
 .sm_wrap dl dd a.cur {
   border: 1px solid #e75b4c;
@@ -96,6 +96,9 @@
 }
 .sm_wrap .co .listC .listWrap {
   position: relative;
+}
+.sm_wrap .co .listC .listWrap img {
+  max-height: 100%;
 }
 .sm_wrap .num {
   height: 70px;

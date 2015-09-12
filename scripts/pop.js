@@ -34,12 +34,12 @@ define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
             list += '</div>';
             var tpls = '<section class="sm_wrap">'+
                 '<div class="c">'+
-                    '<p>科学的电磁炮 炮姐御坂美琴 海滩边手办</p>'+
-                    '<dl class="co"><dt>颜色:</dt><dd class="listC">'+list+'</dd></dl>'+
+                    '<p>SK-II护肤精华露</p>'+
+                    '<dl class="co"><dt>型号:</dt><dd class="listC">'+list+'</dd></dl>'+
                     '<dl class="num"><dt>数量:</dt><dd class="numdd" id="jisuan"></dd></dl>'+
                 '</div>'+
                 '<div class="d">'+
-                    '<span class="d1">距离3.5KM</span>'+
+                    '<span class="d1">距离5.2KM</span>'+
                     '<span class="d2">自己去</span>'+
                     '<span class="d3">加入购物车</span>'+
                 '</div>'+
