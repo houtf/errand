@@ -79,16 +79,16 @@
 	<script src="scripts/lib/zepto.js"></script>
     <script>
    		//返回
-    	$('.header-back').on('tap',function(){
+    	$('.header-back').on('click',function(){
             location.href = 'circle_list.html';
         });
 
-        $('.prom-list .filter p').on('tap', function(){
+        $('.prom-list .filter p').on('click', function(){
         	$('.prom-list .filter p.curr').removeClass('curr');
         	$(this).addClass('curr');
         });
 
-        $('.header-search').on('tap',function(){
+        $('.header-search').on('click',function(){
 			location.href = 'search.html';
 		});
     </script>

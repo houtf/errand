@@ -74,7 +74,7 @@ define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
 
         $('.co').find('a').first().addClass('cur').siblings().removeClass('cur');
 
-        $mask.off('tap').on('tap', function(e) {
+        $mask.off('click').on('click', function(e) {
             e.stopPropagation();
             $(this).hide();
             $wrap.css('bottom', -220).hide();
@@ -93,13 +93,13 @@ define(['zepto', 'iscroll','plus'], function(undefined,undefined,plus) {
             // document.addEventListener('customEvent', true, false);
 
         });
-        $('.co').on('tap','a',function(){
+        $('.co').on('click','a',function(){
             $(this).addClass('cur').siblings().removeClass('cur');
         });
 
-        $wrap.off('tap').on('tap','.d3',function(){
+        $wrap.off('click').on('click','.d3',function(){
             cartNum++;
-            $mask.trigger('tap');
+            $mask.trigger('click');
         })
     }   
 

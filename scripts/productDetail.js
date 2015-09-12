@@ -6,7 +6,7 @@ requirejs.config({
 });
 
 requirejs(['zepto','pop'], function(undefined,pop) {
-	$('.p-choose,.addToCart').on('tap',function(){
+	$('.p-choose,.addToCart').on('click',function(){
 		pop.init();
 	});
 

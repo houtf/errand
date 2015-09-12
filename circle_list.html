@@ -198,16 +198,16 @@
     <script>
     	$('.w'+localStorage.ptype).show();
     	//返回
-    	$('.header-back').on('tap',function(){
+    	$('.header-back').on('click',function(){
             location.href = 'index.html';
         });
         //展开更多详情
-        $('.show-more').on('tap',function(){
+        $('.show-more').on('click',function(){
             $('.circle-info .desc').toggleClass('show-all');
         	$('.circle-info .arrow b').toggleClass('up')
         });
 
-		$('.header-search').on('tap',function(){
+		$('.header-search').on('click',function(){
 			location.href = 'search.html';
 		});
     </script>

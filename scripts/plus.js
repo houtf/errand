@@ -12,13 +12,13 @@ define(function() {
         var $input = $('#'+id).find('.mid');
         
         var yangshi = '';
-        $('#'+id).on('tap','.plus',function(){
+        $('#'+id).on('click','.plus',function(){
             var nums1 = parseInt($input.val(),10);
             nums1++;
             $input.val(nums1);
             $('#'+id).find('.cut').removeClass('dis');
         });
-        $('#'+id).on('tap','.cut',function(){
+        $('#'+id).on('click','.cut',function(){
             var nums2 = parseInt($input.val(),10);
             nums2--;
             if(nums2 <= 1){
@@ -28,7 +28,7 @@ define(function() {
             $input.val(nums2);
             
         });
-    }   
+    } 
 
     return {
 
