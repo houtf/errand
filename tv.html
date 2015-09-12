@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no, minimal-ui" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>遥控器</title>
+    <style>
+      #ok{margin:50px;}
+   </style>
+</head>
+<body style="background:#000">
+  <div style="float:left;margin-left:40px"><img style="vertical-align:middle;width:42px;" src="images/tv/close.png" /></div>
+  <div style="width:100%;"><img src="images/tv/mute.png" style="float:right;width:48px;margin-right:40px" onclick="sendMute()"></div>
+  <div style="height:110px;line-height:110px;text-align:center;clear:right;padding-top:60px">
+    <div><img src="images/tv/up.png" style="vertical-align:middle;width:42px" onclick="sendUp()"/></div>
+    <img src="images/tv/left.png" style="vertical-align:middle;height:42px"  onclick="sendLeft()"/>
+    <img src="images/tv/ok.png" style="vertical-align:middle;width:54px;" id="ok"  onclick="sendEnter()"/>
+    <img src="images/tv/right.png" style="vertical-align:middle;height:42px"  onclick="sendRight()"/>
+    <div><img src="images/tv/down.png" style="vertical-align:middle;width:42px"  onclick="sendDown()"/></div>
+    <div style="margin-top:80px;margin-left:0px"><img src="images/tv/home.png" style="vertical-align:middle;width:54px;margin-right:50px;"  onclick="sendHome()"/><img src="images/tv/pay.png" style="vertical-align:middle;width:54px;margin-right:50px"/><img src="images/tv/back.png" style="vertical-align:middle;width:54px;"  onclick="sendBack()"/></div>
+    <div id="messages" style="text-align:center;color:white;font-size:20px;"></div>
+
+  </div>
+  <div style="margin-top:260px;text-align:center">
+    <span style="margin-right:-8px"><img style="vertical-align:middle;width:75px;" src="images/tv/yls.png" /></span>
+    <span><img style="vertical-align:middle;width:42px; height:54px;" src="images/tv/yl.png" /></span>
+    <span style="margin-left:-8px"><img style="vertical-align:middle;width:75px;" src="images/tv/ylb.png" /></span>
+  </div>
+  <script src="scripts/lib/zepto.js"></script>
+  <script type="text/javascript">
+ 
+    var webSocket;
+
+    function supports_html5_storage() {
+      try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    var ip = '192.168.132.86';
+    var port = '9123';
+    setWebSocketServer(ip, port);
+
+    function setWebSocketServer(host, port) {
+      var str = 'ws://' + host + ':' + port + '/chat';
+      try {
+        webSocket = new WebSocket(str);
+      } catch (e) {
+        webSocket = new WebSocket(str);
+      }
+    }
+
+    webSocket.onerror = function(event) {
+      document.getElementById('messages').innerHTML = "connection error";
+    };
+
+    webSocket.onclose = function() {
+      document.getElementById('messages').innerHTML.innerHTML = "connection close";
+    }
+
+    webSocket.onopen = function(event) {
+      document.getElementById('messages').innerHTML = "connection open";
+    };
+
+    webSocket.onmessage = function(event) {
+      //document.getElementById('messages').innerHTML += '<br/>Message:' + event.data;
+    }
+
+    function sendMediaControl(cmd, value, data) {
+      try {
+        var obj = {
+          "CommandType": "MediaControl",
+          "Content": {
+            "cmd": "",
+            "value": "",
+            "data": "",
+            "RemoteAddress": ""
+          },
+          "IsCallBack": true,
+          "Version": "1.0",
+          "CallBackIp": "",
+          "CallBackPort": ""
+
+        };
+        obj.Content.RemoteAddress = "";
+        obj.Content.cmd = cmd;
+        if (value != null) {
+          obj.Content.value = value;
+        }
+        if (data != null) {
+          obj.Content.data = data;
+        }
+
+
+        webSocket.send(JSON.stringify(obj));
+      } catch (err) {}
+    }
+    var MEDIA_RENDER_CTL_MSG_BASE = 0x100;
+
+    function play() {
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 2);
+    }
+
+    function pause() {
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 3);
+    }
+
+    function stop() {
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 1);
+    }
+
+    function seek() {
+      var time = document.getElementById('seek_time');
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 4, 'REL_TIME=' + time.value);
+    }
+
+    function volumeUp() {
+      var input = document.getElementById('volume_percent');
+      var new_percent = parseInt(input.value) + 5;
+      if (new_percent > 100) {
+        new_percent = 100;
+      }
+      input.value = new_percent;
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 5, new_percent);
+    }
+
+    function volumeDown() {
+      var input = document.getElementById('volume_percent');
+      var new_percent = parseInt(input.value) - 5;
+      if (new_percent < 0) {
+        new_percent = 0;
+      }
+      input.value = new_percent;
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 5, new_percent);
+    }
+
+    function mute() {
+      sendMediaControl(MEDIA_RENDER_CTL_MSG_BASE + 6);
+    }
+
+
+    function shareImage() {
+      var url =
+        'http://img.zcool.cn/community/033b269559f18b36ac7257aeaddd5c8.jpg';
+      sendMediaShare(url, 'image', 'Apollo', true);
+    }
+
+    function shareAudio() {
+      var url = 'http://7xk6tw.dl1.z0.glb.clouddn.com/Sugar.mp3';
+      sendMediaShare(url, 'audio', 'audio name', true);
+    }
+
+    function shareVideo() {
+      var url = 'http://7xk6tw.dl1.z0.glb.clouddn.com/RARBG.com.mp4';
+      sendMediaShare(url, 'video', 'video name', true);
+    }
+
+    function shareUrl() {
+      var url = 'http://192.168.132.85:8080/index_tv.html';
+      try {
+        var mediaObj = {
+          "CommandType": "OPEN_URL",
+          "Content": url,
+          "IsCallBack": false,
+          "Version": "1.0"
+        };
+
+        webSocket.send(JSON.stringify(mediaObj));
+        return false;
+      } catch (err) {
+        //alert(err);
+      }
+    }
+
+    function sendMediaShare(url, type, name, isAuto) {
+      try {
+        var mediaObj = {
+          "CommandType": "MediaShare",
+          "Content": {
+            "MediaURL": "",
+            "MediaType": "",
+            "Name": "",
+            "isAuto": true
+          },
+          "IsCallBack": true,
+          "Version": "1.0",
+          "CallBackIp": "",
+          "CallBackPort": ""
+        };
+
+        mediaObj.Content.MediaURL = url;
+        mediaObj.Content.MediaType = type;
+        mediaObj.Content.Name = name;
+        mediaObj.Content.isAuto = isAuto;
+
+        if (type == 'image') {
+          mediaObj.IsCallBack = false;
+        }
+
+        webSocket.send(JSON.stringify(mediaObj));
+        return false;
+      } catch (err) {
+        //alert(err);
+      }
+    }
+
+
+
+    function sendKeyCodeRequest(keycode) {
+      try {
+        var keyObj = {
+          "CommandType": "KeyControl",
+          "Content": "",
+          "IsCallBack": false,
+          "Version": "1.0",
+          "CallBackIp": "",
+          "CallBackPort": ""
+        };
+
+        keyObj.Content = keycode;
+        webSocket.send(JSON.stringify(keyObj));
+        return false;
+      } catch (err) {}
+    }
+
+    function sendHome() {
+      sendKeyCodeRequest("3");
+    }
+
+    function sendEnter() {
+      shareUrl();
+      // sendKeyCodeRequest("66");
+    }
+
+    function sendBack() {
+      //alert();
+      sendKeyCodeRequest("4");
+    }
+
+    function sendPower() {
+      sendKeyCodeRequest("26");
+    }
+
+    function sendMute() {
+      sendKeyCodeRequest("41");
+    }
+
+    function sendUp() {
+      sendKeyCodeRequest("19");
+    }
+
+    function sendDown() {
+      sendKeyCodeRequest("20");
+    }
+
+    function sendLeft() {
+      //alert();
+      sendKeyCodeRequest("21");
+    }
+
+    function sendRight() {
+      sendKeyCodeRequest("22");
+    }
+
+    function sendVolumeUp() {
+      sendKeyCodeRequest("24");
+    }
+
+    function sendVolumeDown() {
+      sendKeyCodeRequest("25");
+    }
+    $(document).ready(function() {
+      $('img').bind('touchstart', function() {
+        var oldSrc = $(this).attr('src');
+        oldSrc = oldSrc.split('images/tv/')
+        $(this).css('backgroundImage', oldSrc[0] + 'images/tv/change_' + oldSrc[1]);
+      })
+      $('img').bind('touchend', function() {
+        var newSrc = $(this).attr('src');
+        newSrc = newSrc.split('change_')
+        $(this).css('backgroundImage', newSrc[0] + newSrc[1]);
+      })
+    })
+  </script>
+</body>
+</html>

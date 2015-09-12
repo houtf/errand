@@ -15,12 +15,13 @@
 <body>
     <div class="search">
         <div class="location-i"></div>
-        <span class="txt">京东</span>
+        <span class="txt">东京</span>
         <span class="flag"></span>
         <div class="search-i"></div>
         <input type="text" placeholder="搜索商圈、特产">
     </div>
     <div>
+        <span class="home-tv-i">TV</span>
         <span class="home-list-i"></span>
         <span class="home-hot-i"></span>
         <span class="home-gwc-i"></span>
@@ -141,6 +142,49 @@
             }
         });
 
+    var webSocket;
+
+    function supports_html5_storage() {
+      try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    var ip = '192.168.132.86';
+    var port = '9123';
+    setWebSocketServer(ip, port);
+
+    function setWebSocketServer(host, port) {
+      var str = 'ws://' + host + ':' + port + '/chat';
+      try {
+        webSocket = new WebSocket(str);
+      } catch (e) {
+        webSocket = new WebSocket(str);
+      }
+    }
+
+
+    function shareUrl() {
+      var url = 'http://192.168.132.85:8080/index_tv.html';
+      try {
+        var mediaObj = {
+          "CommandType": "OPEN_URL",
+          "Content": url,
+          "IsCallBack": false,
+          "Version": "1.0"
+        };
+
+        webSocket.send(JSON.stringify(mediaObj));
+        return false;
+      } catch (err) {
+        //alert(err);
+      }
+    }
+    $('.home-tv-i').on('tap',function(){
+        shareUrl();
+    });
     </script>
 </body>
 </html>
