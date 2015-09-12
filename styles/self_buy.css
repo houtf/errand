@@ -174,7 +174,7 @@ body {
   margin-top: 10px;
   color: #999;
   padding-right: 15px;
-  background: url(../images/home-arrow-i.png) no-repeat right;
+  /*background: url(../images/home-arrow-i.png) no-repeat right;*/
 }
 .menus {
   font-size: 16px;
@@ -254,4 +254,17 @@ body {
   -webkit-animation-duration: 3s;
   border-radius: 1px;
   -webkit-animation-iteration-count: infinite;
+}
+.dh {
+  width: 68px;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  right: 10px;
+  padding: 0 10px;
+  text-align: right;
+  top: 36px;
+  position: absolute;
+  color: #fff;
+  background: url(../images/dh.png) no-repeat 10px 8px #d94a3c;
 }
